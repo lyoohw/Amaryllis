@@ -48,11 +48,171 @@ p {
   letter-spacing: -0.01em;
 }
 
+.none {
+  display: none;
+}
+
+/* Header */
+
+.header {
+  background-color: lightpink;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menuBox_close {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0px;
+  background-color: white;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.menuBox_close li {
+  margin-bottom: 10px;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.menuBox_open {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+
+.menuBox_open li {
+  margin-bottom: 10px;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.header .menuBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.header .menuBox span {
+  display: block;
+  width: 25px;
+  height: 4px;
+  background-color: #2b292d;
+  margin-bottom: 4px;
+  transition: all ease-in-out 0.3s;
+}
+
+.header .menuBox span:nth-child(2) {
+  position: relative;
+}
+
+.header .menuBox span:nth-child(3) {
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.header .menuBox span:nth-child(4) {
+  margin-bottom: 0;
+}
+
+.header .menuBox_X span:nth-child(1) {
+  opacity: 0;
+}
+
+.header .menuBox_X span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.header .menuBox_X span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.header .menuBox_X span:nth-child(4) {
+  opacity: 0;
+}
+
+.header .shopMenu {
+  display: none;
+}
+
+.header .logoBox img {
+  width: 170px;
+  height: auto;
+}
+
+.header .sideMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  font-size: 16px;
+}
+
+.header .sideMenu li:first-child {
+  font-size: 19px;
+  margin-right: 15px;
+}
+
 /* >=768px (Desktop) */
 @media screen and (min-width: 768px) {
   p {
     font-size: 22px;
     line-height: 1.3636363636;
+  }
+
+  /* Header */
+  .menuBox_open,
+  .menuBox_close {
+    display: none;
+  }
+
+  .header .menuBox {
+    display: none;
+  }
+
+  .header .shopMenu {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .header .logoBox img {
+    width: 200px;
+    height: auto;
+  }
+
+  .header .sideMenu {
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .header .sideMenu li:first-child {
+    font-size: 23px;
+    margin-right: 40px;
+  }
+
+  .header .sideMenu li:last-child {
+    font-size: 20px;
   }
 }
 
