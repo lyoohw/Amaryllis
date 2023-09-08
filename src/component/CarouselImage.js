@@ -25,7 +25,7 @@ const CarouselImage = () => {
         showThumbs={false}
         selectedItem={imageData[currentIndex]}
         onChange={handleChange}
-        className="w-[400px] lg:hidden"
+        className="w-[400px] lg:hidden carousel"
       >
         {renderSlides}
       </Carousel>
