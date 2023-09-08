@@ -2,6 +2,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import { GoPersonFill } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { setHisTrue } from "../store";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const isTrue = useSelector((state) => state.HisTrue);
@@ -30,7 +31,9 @@ const Header = () => {
           <li>Shop</li>
         </ul>
         <div className="logoBox">
-          <img alt="logo" src="/assets/logo.png" />
+          <Link to="/">
+            <img alt="logo" src="/assets/logo.png" />
+          </Link>
         </div>
         <ul className="sideMenu">
           <li>
