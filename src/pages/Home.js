@@ -3,7 +3,7 @@ import Header from "../component/Header";
 
 const Home = () => {
   return (
-    <div>
+    <div className="scroll">
       <Header />
       <CarouselImage />
     </div>
