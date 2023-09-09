@@ -15,34 +15,36 @@ const Header = () => {
         <li>Shop</li>
       </ul>
       <header className="header">
-        <div
-          onClick={() => {
-            dispatch(setHisTrue());
-          }}
-          className={isTrue ? "menuBox menuBox_X" : "menuBox"}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className="nav">
+          <div
+            onClick={() => {
+              dispatch(setHisTrue());
+            }}
+            className={isTrue ? "menuBox menuBox_X" : "menuBox"}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul className="shopMenu">
+            <li>About</li>
+            <li>Shop</li>
+          </ul>
+          <div className="logoBox">
+            <Link to="/">
+              <img alt="logo" src="/assets/logo.png" />
+            </Link>
+          </div>
+          <ul className="sideMenu">
+            <li>
+              <GoPersonFill />
+            </li>
+            <li>
+              <FaShoppingBag />
+            </li>
+          </ul>
         </div>
-        <ul className="shopMenu">
-          <li>About</li>
-          <li>Shop</li>
-        </ul>
-        <div className="logoBox">
-          <Link to="/">
-            <img alt="logo" src="/assets/logo.png" />
-          </Link>
-        </div>
-        <ul className="sideMenu">
-          <li>
-            <GoPersonFill />
-          </li>
-          <li>
-            <FaShoppingBag />
-          </li>
-        </ul>
       </header>
     </div>
   );

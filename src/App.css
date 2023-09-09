@@ -48,6 +48,21 @@ p {
   letter-spacing: -0.01em;
 }
 
+.button {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 10px;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.4s;
+}
+
+.button:hover {
+  background-color: white;
+  color: #2b292d;
+}
+
 .none {
   display: none;
 }
@@ -58,7 +73,15 @@ p {
   background-color: lightpink;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .nav {
+  padding: 0 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menuBox_close {
@@ -71,6 +94,7 @@ p {
   width: 100%;
   height: 0px;
   background-color: white;
+  z-index: 9999;
   overflow: hidden;
   transition: all 0.5s;
 }
@@ -79,6 +103,8 @@ p {
   margin-bottom: 10px;
   font-size: 23px;
   font-weight: 600;
+  opacity: 0;
+  transition: all 0.6s;
 }
 
 .menuBox_open {
@@ -91,6 +117,7 @@ p {
   width: 100%;
   height: 150px;
   background-color: white;
+  z-index: 9999;
   opacity: 0.9;
   transition: all 0.5s;
 }
@@ -99,6 +126,8 @@ p {
   margin-bottom: 10px;
   font-size: 23px;
   font-weight: 600;
+  opacity: 1;
+  transition: all 0.6s;
 }
 
 .header .menuBox {
@@ -107,7 +136,7 @@ p {
   justify-content: center;
   width: 30px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 9999;
 }
 
 .header .menuBox span {
@@ -153,7 +182,7 @@ p {
 }
 
 .header .logoBox img {
-  width: 170px;
+  width: 130px;
   height: auto;
 }
 
@@ -166,8 +195,12 @@ p {
 }
 
 .header .sideMenu li:first-child {
-  font-size: 19px;
+  font-size: 17px;
   margin-right: 15px;
+}
+
+.header .sideMenu li:last-child {
+  font-size: 15px;
 }
 
 /* carousel */
@@ -177,6 +210,91 @@ p {
   height: auto;
 }
 
+/* Home - goShop */
+
+.goShop {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goShop .gs_textBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.goShop .gs_imgbox {
+  width: 50%;
+}
+
+.goShop .gs_textBox h5 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.goShop .gs_textBox p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.goShop .gsItem1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(114, 162, 207);
+  margin-bottom: 10px;
+}
+
+.goShop .gsItem1 .gs_textBox {
+  align-items: flex-start;
+  color: white;
+}
+
+.goShop .gsItem1 .gs_textBox p {
+  color: white;
+}
+
+.goShop .gsItem1 img {
+  width: 50px;
+  height: auto;
+}
+
+.goShop .gsItem2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(226, 236, 198);
+}
+
+.goShop .gsItem2 .gs_textBox {
+  align-items: flex-end;
+}
+
+.goShop .gsItem2 img {
+  width: 120px;
+  height: auto;
+}
+
+.goShop .gsItem2 .button {
+  border: 1px solid #2b292d;
+  color: #2b292d;
+}
+
+.goShop .gsItem2 .button:hover {
+  background-color: #2b292d;
+  color: white;
+}
+
 /* >=768px (Desktop) */
 @media screen and (min-width: 768px) {
   p {
@@ -184,10 +302,21 @@ p {
     line-height: 1.3636363636;
   }
 
+  .button {
+    padding: 15px;
+    font-size: 15px;
+  }
+
   /* Header */
   .menuBox_open,
   .menuBox_close {
     display: none;
+  }
+
+  .header .nav {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .header .menuBox {
@@ -220,6 +349,60 @@ p {
 
   .header .sideMenu li:last-child {
     font-size: 20px;
+  }
+
+  /* Home - goShop */
+
+  .goShop_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .goShop {
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 50px;
+    flex-shrink: 0;
+  }
+
+  .goShop .gs_textBox {
+    width: 250px;
+  }
+
+  .goShop .gs_textBox h5 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .goShop .gs_textBox p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .goShop .gsItem1 {
+    width: 50%;
+    height: 200px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .goShop .gsItem1 img {
+    width: 65px;
+    height: auto;
+  }
+
+  .goShop .gsItem2 {
+    width: 50%;
+    height: 200px;
+  }
+
+  .goShop .gsItem2 img {
+    width: 170px;
+    height: auto;
   }
 }
 
