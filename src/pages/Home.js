@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import CarouselImage from "../component/CarouselImage";
 import Header from "../component/Header";
 
 const Home = () => {
+  const data = useSelector((state) => state.items);
+
   return (
     <div>
       <Header />
@@ -34,6 +37,17 @@ const Home = () => {
       <div className="newItem_section">
         <div className="newItem">
           <h4>New Item</h4>
+          <ul className="newItemList">
+            {data.slice(0, 3).map((it, i) => (
+              <li key={i}>
+                <div className="ni_imgBox">
+                  <img alt="new items" src={it.image} />
+                </div>
+                <h5>{it.title}</h5>
+                <p>{it.price} 원</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

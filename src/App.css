@@ -319,6 +319,12 @@ p {
   margin-bottom: 15px;
 }
 
+.newItem .ni_imgBox img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 /* >=768px (Desktop) */
 @media screen and (min-width: 768px) {
   p {
@@ -431,5 +437,15 @@ p {
   .goShop .gsItem2 img {
     width: 170px;
     height: auto;
+  }
+
+  /* Home - newItem */
+
+  .newItem .newItemList {
+    display: flex;
+  }
+
+  .newItem .ni_imgBox {
+    width: 300px;
   }
 }
