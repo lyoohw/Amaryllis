@@ -6,7 +6,7 @@ const Home = () => {
     <div>
       <Header />
       <CarouselImage />
-      <div className="goShop_container">
+      <div className="goShop_section">
         <div className="goShop">
           <div className="gsItem1">
             <div className="gs_textBox">
@@ -28,6 +28,12 @@ const Home = () => {
               <img alt="perfume" src="/assets/item25_png.png" />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="newItem_section">
+        <div className="newItem">
+          <h4>New Item</h4>
         </div>
       </div>
     </div>

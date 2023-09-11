@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div>
       <ul className={isTrue ? "menuBox_open" : "menuBox_close"}>
-        <li>About</li>
+        <li>Home</li>
         <li>Shop</li>
       </ul>
       <header className="header">
@@ -28,7 +28,7 @@ const Header = () => {
             <span></span>
           </div>
           <ul className="shopMenu">
-            <li>About</li>
+            <li>Home</li>
             <li>Shop</li>
           </ul>
           <div className="logoBox">
