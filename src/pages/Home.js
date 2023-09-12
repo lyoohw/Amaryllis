@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import CarouselImage from "../component/CarouselImage";
 import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Home = () => {
   const data = useSelector((state) => state.items);
@@ -25,7 +26,7 @@ const Home = () => {
             <div className="gs_textBox">
               <h5>Perfume</h5>
               <p>나만의 향기를 찾고 있다면</p>
-              <button className="button">VIEW MORE</button>
+              <button className="button_black">VIEW MORE</button>
             </div>
             <div className="gs_imgBox">
               <img alt="perfume" src="/assets/item25_png.png" />
@@ -38,10 +39,10 @@ const Home = () => {
         <div className="newItem">
           <h4>New Item</h4>
           <ul className="newItemList">
-            {data.slice(0, 3).map((it, i) => (
-              <li key={i}>
+            {data.slice(0, 3).map((it) => (
+              <li key={it.id}>
                 <div className="ni_imgBox">
-                  <img alt="new items" src={it.image} />
+                  <img alt="new Item" src={it.image} />
                 </div>
                 <h5>{it.title}</h5>
                 <p>{it.price} 원</p>
@@ -50,6 +51,7 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
