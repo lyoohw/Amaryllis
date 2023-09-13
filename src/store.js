@@ -26,11 +26,30 @@ const items = createSlice({
   initialState: data,
 });
 
+const currentPage = createSlice({
+  name: "currentPage",
+  initialState: 1,
+  reducers: {
+    paginate(state, number) {
+      state = number.payload;
+      return state;
+    },
+  },
+});
+
+const itemPerPage = createSlice({
+  name: "itemPerPage",
+  initialState: 9,
+});
+
 export let { setHisTrue } = HisTrue.actions;
+export let { paginate } = currentPage.actions;
 
 export default configureStore({
   reducer: {
     HisTrue: HisTrue.reducer,
     items: items.reducer,
+    currentPage: currentPage.reducer,
+    itemPerPage: itemPerPage.reducer,
   },
 });
