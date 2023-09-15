@@ -42,8 +42,9 @@ const Pageination = ({ itemPerPage, totalItems }) => {
             <li
               key={number}
               className={number === currentPage ? "selected" : ""}
+              onClick={() => dispatch(paginate(number))}
             >
-              <span onClick={() => dispatch(paginate(number))}>{number}</span>
+              <span>{number}</span>
             </li>
           ))}
           <li

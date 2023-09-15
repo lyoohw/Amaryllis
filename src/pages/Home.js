@@ -3,12 +3,12 @@ import CarouselImage from "../component/CarouselImage";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
-const Home = () => {
+const Home = ({ googleLogin, googleLogout }) => {
   const data = useSelector((state) => state.items);
 
   return (
     <div>
-      <Header />
+      <Header googleLogin={googleLogin} googleLogout={googleLogout} />
       <CarouselImage />
       <div className="goShop_section">
         <div className="goShop">

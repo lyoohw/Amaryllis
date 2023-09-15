@@ -9,7 +9,8 @@ const getData = axios
     return result.data;
   });
 
-const data = await getData;
+const awaitData = await getData;
+let data = [...awaitData];
 
 const HisTrue = createSlice({
   name: "HisTrue",
@@ -24,6 +25,12 @@ const HisTrue = createSlice({
 const items = createSlice({
   name: "items",
   initialState: data,
+  reducers: {
+    setItems(state, a) {
+      state = a.payload;
+      return state;
+    },
+  },
 });
 
 const currentPage = createSlice({
@@ -42,8 +49,33 @@ const itemPerPage = createSlice({
   initialState: 9,
 });
 
+const userData = createSlice({
+  name: "userData",
+  initialState: "",
+  reducers: {
+    setUserData(state, a) {
+      state = JSON.parse(a.payload);
+      return state;
+    },
+  },
+});
+
+const isLoggedIn = createSlice({
+  name: "isLoggedIn",
+  initialState: false,
+  reducers: {
+    setIsLoggedIn(state, a) {
+      state = a.payload;
+      return state;
+    },
+  },
+});
+
 export let { setHisTrue } = HisTrue.actions;
+export let { setItems } = items.actions;
 export let { paginate } = currentPage.actions;
+export let { setUserData } = userData.actions;
+export let { setIsLoggedIn } = isLoggedIn.actions;
 
 export default configureStore({
   reducer: {
@@ -51,5 +83,7 @@ export default configureStore({
     items: items.reducer,
     currentPage: currentPage.reducer,
     itemPerPage: itemPerPage.reducer,
+    userData: userData.reducer,
+    isLoggedIn: isLoggedIn.reducer,
   },
 });

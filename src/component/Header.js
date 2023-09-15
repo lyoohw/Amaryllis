@@ -1,11 +1,14 @@
 import { FaShoppingBag } from "react-icons/fa";
 import { GoPersonFill } from "react-icons/go";
+import { FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { setHisTrue } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ googleLogin, googleLogout }) => {
+  const userData = useSelector((state) => state.userData);
   const isTrue = useSelector((state) => state.HisTrue);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -64,10 +67,21 @@ const Header = () => {
             </Link>
           </div>
           <ul className="sideMenu">
-            <li>
-              <GoPersonFill />
+            <li className={isLoggedIn ? "login" : "styleNone"}>
+              {isLoggedIn ? userData.displayName : ""}
             </li>
-            <li>
+            <li
+              onClick={() => {
+                isLoggedIn ? googleLogout() : googleLogin();
+              }}
+            >
+              {isLoggedIn ? <FiLogOut /> : <GoPersonFill />}
+            </li>
+            <li
+              onClick={() => {
+                console.log(userData.displayName);
+              }}
+            >
               <FaShoppingBag />
             </li>
           </ul>
