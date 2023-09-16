@@ -913,7 +913,7 @@ p {
   .cart_result_totalB
   .cart_buy_button_box
   > .button {
-  width: 90%;
+  width: 200px;
   font-size: 13px;
 }
 
