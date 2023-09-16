@@ -42,10 +42,9 @@ function App() {
 
   //구글 로그아웃
   const googleLogout = () => {
+    navigate("/");
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         console.log(error);
       });
@@ -100,10 +99,17 @@ function App() {
             <Home googleLogin={googleLogin} googleLogout={googleLogout} />
           }
         />
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop"
+          element={
+            <Shop googleLogin={googleLogin} googleLogout={googleLogout} />
+          }
+        />
         <Route
           path="/detail/:id"
-          element={<Detail googleLogin={googleLogin} />}
+          element={
+            <Detail googleLogin={googleLogin} googleLogout={googleLogout} />
+          }
         />
         <Route path="/cart" element={<Cart googleLogout={googleLogout} />} />
       </Routes>

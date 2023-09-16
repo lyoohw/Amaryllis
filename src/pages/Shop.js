@@ -7,7 +7,7 @@ import { resetCount } from "../store";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Shop = () => {
+const Shop = ({ googleLogin, googleLogout }) => {
   const navigate = useNavigate();
   const data = useSelector((state) => state.items);
   const dispatch = useDispatch();
@@ -80,7 +80,7 @@ const Shop = () => {
 
   return (
     <div>
-      <Header />
+      <Header googleLogin={googleLogin} googleLogout={googleLogout} />
 
       <div className="shop_section">
         <div className="shop_buttonBox">

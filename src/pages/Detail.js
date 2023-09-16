@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { increaseCount, decreaseCount, setModalOpen } from "../store";
 import ModalBasic from "../component/ModalBasic";
 
-const Detail = ({ googleLogin }) => {
+const Detail = ({ googleLogin, googleLogout }) => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const modalOpen = useSelector((state) => state.modalOpen);
   const data = useSelector((state) => state.items);
@@ -48,7 +48,7 @@ const Detail = ({ googleLogin }) => {
 
   return (
     <div>
-      <Header />
+      <Header googleLogin={googleLogin} googleLogout={googleLogout} />
       <div className="detail_section">
         <div className="detail">
           <div className="d_imgBox">
