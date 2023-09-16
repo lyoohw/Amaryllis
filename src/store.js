@@ -71,11 +71,42 @@ const isLoggedIn = createSlice({
   },
 });
 
+const count = createSlice({
+  name: "count",
+  initialState: 1,
+  reducers: {
+    increaseCount(state) {
+      state += 1;
+      return state;
+    },
+    decreaseCount(state) {
+      state -= 1;
+      return state;
+    },
+    resetCount(state) {
+      state = 1;
+      return state;
+    },
+  },
+});
+
+const modalOpen = createSlice({
+  name: "modalOpen",
+  initialState: false,
+  reducers: {
+    setModalOpen(state) {
+      return !state;
+    },
+  },
+});
+
 export let { setHisTrue } = HisTrue.actions;
 export let { setItems } = items.actions;
 export let { paginate } = currentPage.actions;
 export let { setUserData } = userData.actions;
 export let { setIsLoggedIn } = isLoggedIn.actions;
+export let { increaseCount, decreaseCount, resetCount } = count.actions;
+export let { setModalOpen } = modalOpen.actions;
 
 export default configureStore({
   reducer: {
@@ -85,5 +116,7 @@ export default configureStore({
     itemPerPage: itemPerPage.reducer,
     userData: userData.reducer,
     isLoggedIn: isLoggedIn.reducer,
+    count: count.reducer,
+    modalOpen: modalOpen.reducer,
   },
 });

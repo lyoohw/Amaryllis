@@ -66,7 +66,7 @@ const Header = ({ googleLogin, googleLogout }) => {
               <img alt="logo" src="/assets/logo.png" />
             </Link>
           </div>
-          <ul className="sideMenu">
+          <ul className={isLoggedIn ? "sideMenu sideMenu_login" : "sideMenu"}>
             <li className={isLoggedIn ? "login" : "styleNone"}>
               {isLoggedIn ? userData.displayName : ""}
             </li>
@@ -79,7 +79,7 @@ const Header = ({ googleLogin, googleLogout }) => {
             </li>
             <li
               onClick={() => {
-                console.log(userData.displayName);
+                isLoggedIn ? navigate("/cart") : googleLogin();
               }}
             >
               <FaShoppingBag />

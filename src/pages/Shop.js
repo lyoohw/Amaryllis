@@ -3,9 +3,12 @@ import Header from "../component/Header";
 import Pagination from "../component/Pagination";
 import { paginate } from "../store";
 import { setItems } from "../store";
+import { resetCount } from "../store";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
+  const navigate = useNavigate();
   const data = useSelector((state) => state.items);
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.currentPage);
@@ -22,16 +25,25 @@ const Shop = () => {
 
   const currentData = currentItems(data);
 
+  //shop페이지에 들어올 때 첫페이지가 나오게 하고, 상품 데이터 세팅
   useEffect(() => {
     dispatch(paginate(1));
     dispatch(setItems(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  //페이지가 바뀌면 화면 상단으로
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
+  //상세페이지에서 샵으로 나오면 수량Count를 다시 1로 초기화
+  useEffect(() => {
+    dispatch(resetCount());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  //정렬 원래대로
   const undoSort = () => {
     let copyData = [...data];
     const setData = copyData.sort((a, b) => {
@@ -43,6 +55,7 @@ const Shop = () => {
     return setData;
   };
 
+  //저렴한 가격 순으로
   const lowPriceSort = () => {
     let copyData = [...data];
     const setData = copyData.sort((a, b) => {
@@ -82,7 +95,12 @@ const Shop = () => {
         </div>
         <ul className="shop_itemList">
           {currentData.map((it) => (
-            <li key={it.id}>
+            <li
+              key={it.id}
+              onClick={() => {
+                navigate(`/detail/${it.id}`);
+              }}
+            >
               <div className="shop_imgBox">
                 <img alt="item" src={it.image} />
               </div>

@@ -14,6 +14,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setIsLoggedIn, setUserData } from "./store";
 import { useEffect } from "react";
+import Cart from "./pages/Cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
   const provider = new GoogleAuthProvider();
   const auth = authService;
 
+  //구글 로그인
   const googleLogin = () => {
     setPersistence(auth, browserSessionPersistence)
       .then(() => {
@@ -38,6 +40,7 @@ function App() {
       });
   };
 
+  //구글 로그아웃
   const googleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -48,6 +51,7 @@ function App() {
       });
   };
 
+  //로그인 상태 확인
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -60,6 +64,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
+  //새로고침 해도 구글 닉네임이 사라지지 않도록 세션스토리지 value 가져와서 userData에 넣음
   useEffect(() => {
     const sessitonLogin = sessionStorage.getItem(sessionStorage.key(0));
 
@@ -68,6 +73,23 @@ function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      const userEmail = JSON.parse(
+        sessionStorage.getItem(sessionStorage.key(0))
+      ).email;
+      const getLocalData = localStorage.getItem(userEmail);
+
+      if (getLocalData === null) {
+        localStorage.setItem(userEmail, JSON.stringify([]));
+      } else {
+        const getCartData = JSON.parse(localStorage.getItem(userEmail));
+        const copyCartList = [...getCartData];
+        localStorage.setItem(userEmail, JSON.stringify(copyCartList));
+      }
+    }
+  }, [isLoggedIn]);
 
   return (
     <div>
@@ -79,7 +101,11 @@ function App() {
           }
         />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route
+          path="/detail/:id"
+          element={<Detail googleLogin={googleLogin} />}
+        />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
