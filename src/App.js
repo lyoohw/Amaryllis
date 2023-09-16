@@ -105,7 +105,7 @@ function App() {
           path="/detail/:id"
           element={<Detail googleLogin={googleLogin} />}
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart googleLogout={googleLogout} />} />
       </Routes>
     </div>
   );
