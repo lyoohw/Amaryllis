@@ -970,6 +970,11 @@ p {
 
   .header .shopMenu li {
     cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .header .shopMenu li:hover {
+    color: white;
   }
 
   .header .logoBox img {
