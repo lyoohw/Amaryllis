@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Header from "../component/Header";
+import Footer from "../component/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCount, decreaseCount, setModalOpen } from "../store";
 import ModalBasic from "../component/ModalBasic";
@@ -103,6 +104,7 @@ const Detail = ({ googleLogin, googleLogout }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

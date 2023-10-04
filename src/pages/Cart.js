@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Cart = ({ googleLogout }) => {
   const userEmail = JSON.parse(
@@ -130,6 +131,7 @@ const Cart = ({ googleLogout }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

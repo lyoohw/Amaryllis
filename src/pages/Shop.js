@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../component/Header";
+import Footer from "../component/Footer";
 import Pagination from "../component/Pagination";
 import { paginate } from "../store";
 import { setItems } from "../store";
@@ -115,6 +116,7 @@ const Shop = ({ googleLogin, googleLogout }) => {
         itemPerPage={itemPerPage}
         totalItems={data.length}
       ></Pagination>
+      <Footer />
     </div>
   );
 };
