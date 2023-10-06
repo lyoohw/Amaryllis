@@ -2,10 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Pagination from "../component/Pagination";
-import { paginate } from "../store";
-import { setItems } from "../store";
-import { resetCount } from "../store";
-import { useEffect, useState } from "react";
+import { setItems, resetCount, paginate, setBisTrue } from "../store";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Shop = ({ googleLogin, googleLogout }) => {
@@ -14,7 +12,7 @@ const Shop = ({ googleLogin, googleLogout }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.currentPage);
   const itemPerPage = useSelector((state) => state.itemPerPage);
-  const [BisTrue, setBisTrue] = useState(false);
+  const BisTrue = useSelector((state) => state.BisTrue);
 
   const indexOfLast = currentPage * itemPerPage;
   const indexOfFirst = indexOfLast - itemPerPage;
@@ -70,11 +68,11 @@ const Shop = ({ googleLogin, googleLogout }) => {
 
   const buttonHandler = () => {
     if (BisTrue === false) {
-      setBisTrue(!BisTrue);
+      dispatch(setBisTrue(!BisTrue));
       return dispatch(setItems(lowPriceSort()));
     }
     if (BisTrue === true) {
-      setBisTrue(!BisTrue);
+      dispatch(setBisTrue(!BisTrue));
       return dispatch(setItems(undoSort()));
     }
   };

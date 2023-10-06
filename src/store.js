@@ -49,6 +49,16 @@ const itemPerPage = createSlice({
   initialState: 9,
 });
 
+const BisTrue = createSlice({
+  name: "BisTrue",
+  initialState: false,
+  reducers: {
+    setBisTrue(state) {
+      return !state;
+    },
+  },
+});
+
 const userData = createSlice({
   name: "userData",
   initialState: "",
@@ -103,6 +113,7 @@ const modalOpen = createSlice({
 export let { setHisTrue } = HisTrue.actions;
 export let { setItems } = items.actions;
 export let { paginate } = currentPage.actions;
+export let { setBisTrue } = BisTrue.actions;
 export let { setUserData } = userData.actions;
 export let { setIsLoggedIn } = isLoggedIn.actions;
 export let { increaseCount, decreaseCount, resetCount } = count.actions;
@@ -114,6 +125,7 @@ export default configureStore({
     items: items.reducer,
     currentPage: currentPage.reducer,
     itemPerPage: itemPerPage.reducer,
+    BisTrue: BisTrue.reducer,
     userData: userData.reducer,
     isLoggedIn: isLoggedIn.reducer,
     count: count.reducer,
