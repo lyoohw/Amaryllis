@@ -1,22 +1,24 @@
-# Good Restaurant Diary 맛집 일기장
-맛집에 대한 평점을 남기고 간단한 소감을 쓸 수 있는 개인적인 일기장 프로그램입니다.
-- <https://lyoona-react-project.web.app/>
+# Amaryllis 화장품 쇼핑몰
+화장품을 쇼핑할 수 있는 쇼핑몰 사이트입니다.
+- <https://amaryllis-lyoona-prj.web.app/>
 
 <br />
 
 ## 개요
-- 프로젝트 이름: Good Restaurant Diary
-- 작업 기간: 2023.07.01 ~ 2023.07.31
+- 프로젝트 이름: Amaryllis
+- 작업 기간: 2023.09.05 ~ 2023.10.06
 - 사용한 스킬: JavaScript, React, React-Router-Dom, LocalStorage, Firebase
 - 개인 프로젝트
   
 <br />
 
 ## 구현기능
-- 현재 년, 월 표시(년, 월 변경 가능)
-- 해당 년, 월에 작성한 일기 조회
-- 일기 작성, 수정, 삭제, 상세페이지
-- 일기 내림차순, 오름차순 필터, 좋은 평점/ 나쁜 평점 필터
+- 캐로셀
+- google연동 로그인
+- 상품 리스트 조회, 상품 저렴한 가격 순 정렬 기능, 페이징 기능
+- 상품 상세페이지, 수량 수정, 장바구니 추가
+- 장바구니 페이지, 장바구니에 추가한 상품 리스트 조회, 수량 수정 기능, 장바구니에 추가한 상품의 총액 표시
+- !!구매하기 기능은 미구현 
 
 <br />
 
@@ -24,43 +26,65 @@
 
 <br />
 
-  - 메인 화면
-    ![메인 화면](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4.png)
+  - 메인페이지
 
 <br />
 
-  - 오래된 순 필터
-    ![오래된 순 필터](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%98%A4%EB%9E%98%EB%90%9C%EC%88%9C%ED%95%84%ED%84%B0.png)
+  ![메인페이지 1](https://github.com/lyoohw/Amaryllis/assets/111130432/f71b4000-1bab-40fb-83fa-ba6147911b74)
+  ![메인페이지 2](https://github.com/lyoohw/Amaryllis/assets/111130432/6d5429bf-bc2d-465d-9327-420084220669)
+  ![메인페이지 3](https://github.com/lyoohw/Amaryllis/assets/111130432/a65ba198-8462-4f7b-be5f-48518a60b302)
+
+<br />
+
+  - 메인페이지 :: 로그인
+
+<br />
+
+  ![메인페이지 4_로그인](https://github.com/lyoohw/Amaryllis/assets/111130432/8bd152a2-e087-4c2a-8ff0-ce44f6c777b9)
+  
+<br />
+
+  - 상품리스트 페이지
+
+<br />
+
+  ![상품리스트 페이지 1](https://github.com/lyoohw/Amaryllis/assets/111130432/cac5038a-f38a-4500-8709-757c1497e9d8)
+  ![상품리스트 페이지 2](https://github.com/lyoohw/Amaryllis/assets/111130432/f7112fab-cd41-45e3-9c76-f1be04c172c0)
+  ![상품리스트 페이지 3](https://github.com/lyoohw/Amaryllis/assets/111130432/701c60b1-a5a6-4d7e-b163-112a3b913dad)
     
 <br />
 
-  - 좋은 평점 필터
-    ![좋은 평점 필터](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%A2%8B%EC%9D%80%ED%8F%89%EC%A0%90%20%ED%95%84%ED%84%B0.png)
+  - 저렴한 순 정렬
 
 <br />
 
-  - 나쁜 평점 필터
-    ![나쁜 평점 필터](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EB%82%98%EC%81%9C%20%ED%8F%89%EC%A0%90%20%ED%95%84%ED%84%B0.png)
+  ![상품리스트-저렴한 순](https://github.com/lyoohw/Amaryllis/assets/111130432/7d6ab3c6-81a8-4c2d-b1ba-4e274b879d57)
+  ![상품리스트-저렴한 순2](https://github.com/lyoohw/Amaryllis/assets/111130432/1d409d13-68fa-4532-a68f-8e3d51681180)
+  ![상품리스트-저렴한 순3](https://github.com/lyoohw/Amaryllis/assets/111130432/70f4b6f1-3d8b-46a6-8bd3-19004be0ff98)
 
 <br />
 
-  - 새 일기 쓰기
-    ![새 일기 쓰기](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%83%88%EC%9D%BC%EA%B8%B0%EC%93%B0%EA%B8%B0.png)
+  - 상품 상세페이지
 
 <br />
 
-  - 새 일기 쓰기 완료(조회)
-    ![새 일기 쓰기 완료(조회)](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9D%BC%EA%B8%B0%EC%9E%91%EC%84%B1.png)
+  ![상품 상세페이지](https://github.com/lyoohw/Amaryllis/assets/111130432/37c831a6-9cf7-43d9-8ae9-20715a0fc630)
+  ![상품 상세페이지2](https://github.com/lyoohw/Amaryllis/assets/111130432/73fdf537-8a07-426e-8c69-e71b058f73fa)
 
 <br />
 
-  - 일기 수정
-    ![일기 수정1](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9D%BC%EA%B8%B0%EC%88%98%EC%A0%951.png)
+  - 상품 상세페이지 모달
 
-  - ![일기 수정2](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9D%BC%EA%B8%B0%EC%88%98%EC%A0%952.png)
-  - ![일기 수정 완료](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9D%BC%EA%B8%B0%EC%88%98%EC%A0%95%EC%99%84%EB%A3%8C.png)
-    
 <br />
 
-  - 월별 일기 조회
-![월별 일기 조회](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9B%94%EB%B3%84%20%EC%9D%BC%EA%B8%B0%20%EC%A1%B0%ED%9A%8C.png)
+  ![상품 상세페이지 모달](https://github.com/lyoohw/Amaryllis/assets/111130432/4a38b3c0-8726-4f9f-bc2a-57d27d9dcb1e)
+
+<br />
+
+  - 장바구니페이지
+
+<br />
+
+  ![장바구니 페이지](https://github.com/lyoohw/Amaryllis/assets/111130432/eab2a270-4eef-4ac2-bb58-55c509687ac2)
+  ![장바구니 페이지2](https://github.com/lyoohw/Amaryllis/assets/111130432/f9f3ef61-c164-43fe-bd68-bcae9f0e76b0)
+
