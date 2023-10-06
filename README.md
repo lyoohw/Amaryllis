@@ -64,9 +64,3 @@
 
   - 월별 일기 조회
 ![월별 일기 조회](https://github.com/lyoohw/goodrestaurantDiary/blob/master/capture/%EC%9B%94%EB%B3%84%20%EC%9D%BC%EA%B8%B0%20%EC%A1%B0%ED%9A%8C.png)
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
