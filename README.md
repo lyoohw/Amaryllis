@@ -6,7 +6,7 @@
 
 ## 개요
 - 프로젝트 이름: Amaryllis
-- 작업 기간: 2023.09.05 ~ 2023.10.06
+- 작업 기간: 2023.09.05 ~ 2023.10.07
 - 사용한 스킬: JavaScript, React, React-Router-Dom, LocalStorage, Firebase
 - 개인 프로젝트
   
